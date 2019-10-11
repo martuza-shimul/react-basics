@@ -1,23 +1,42 @@
-import React, { Component } from "react";
+import React from "react";
 
-class Shimul extends Component {
-  render() {
-      const { stupids } = this.props;
-      const stupidList = stupids.map(stupid => {
-          return (
-            <div className="shimul" key={stupid.id}>
-                <p>Name: { stupid.name }</p>
-                <p>Age: { stupid.age }</p>
-                <p>Belt: { stupid.belt }</p>
-            </div>
-          )
-      })
-    return (
-      <div className="stupit-list">
-          { stupidList }
+/*
+*This is a UI Component
+?UI component is function based
+ */
+
+const Shimul = ({ stupids }) => {
+  const stupidList = stupids.map(stupid => {
+    if (stupid.age > 20) {
+      return (
+        <div className="shimul" key={stupid.id}>
+          <p>Name: {stupid.name}</p>
+          <p>Age: {stupid.age}</p>
+          <p>Belt: {stupid.belt}</p>
+        </div>
+      );
+    } else {
+      return null;
+    }
+  });
+
+  /*
+  
+  ? this is the ternary oparator. It does the same work like above if-else fuction do.
+
+    const stupidList = stupids.map(stupid => {
+    return stupid.age > 20 ? (
+      <div className="shimul" key={stupid.id}>
+        <p>Name: {stupid.name}</p>
+        <p>Age: {stupid.age}</p>
+        <p>Belt: {stupid.belt}</p>
       </div>
-    );
-  }
-}
+    ) : null;
+  });
+  
+  */
+
+  return <div className="stupid-list">{stupidList}</div>;
+};
 
 export default Shimul;
