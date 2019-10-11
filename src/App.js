@@ -23,11 +23,21 @@ class App extends Component {
       stupids: stupids
     });
   };
+
+  deleteStupid = id => {
+    let stupids = this.state.stupids.filter(stupid => {
+      return stupid.id !== id;
+    });
+    this.setState({
+      stupids: stupids
+    });
+  };
+
   render() {
     return (
       <div className="App">
         <h1>Hello React!</h1>
-        <Shimul stupids={this.state.stupids} />
+        <Shimul deleteStupid={this.deleteStupid} stupids={this.state.stupids} />
         <AddStupid addStupid={this.addStupid} />
       </div>
     );

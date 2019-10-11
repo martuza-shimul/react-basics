@@ -5,7 +5,7 @@ import React from "react";
 ?UI component is a function based component & it doesn't contain any state
  */
 
-const Shimul = ({ stupids }) => {
+const Shimul = ({ stupids, deleteStupid }) => {
   const stupidList = stupids.map(stupid => {
     if (stupid.age > 20) {
       return (
@@ -13,6 +13,7 @@ const Shimul = ({ stupids }) => {
           <p>Name: {stupid.name}</p>
           <p>Age: {stupid.age}</p>
           <p>Belt: {stupid.belt}</p>
+          <button onClick={ () => {deleteStupid(stupid.id)}}>Delete Stupid</button>
         </div>
       );
     } else {
