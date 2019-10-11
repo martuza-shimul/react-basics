@@ -1,19 +1,26 @@
 import React from "react";
+import "./Stupids.css";
 
 /*
 ?This is a UI Component
 ?UI component is a function based component & it doesn't contain any state
  */
 
-const Shimul = ({ stupids, deleteStupid }) => {
+const Stupid = ({ stupids, deleteStupid }) => {
   const stupidList = stupids.map(stupid => {
     if (stupid.age > 20) {
       return (
-        <div className="shimul" key={stupid.id}>
+        <div className="stupid" key={stupid.id}>
           <p>Name: {stupid.name}</p>
           <p>Age: {stupid.age}</p>
           <p>Belt: {stupid.belt}</p>
-          <button onClick={ () => {deleteStupid(stupid.id)}}>Delete Stupid</button>
+          <button
+            onClick={() => {
+              deleteStupid(stupid.id);
+            }}
+          >
+            Delete Stupid
+          </button>
         </div>
       );
     } else {
@@ -40,4 +47,4 @@ const Shimul = ({ stupids, deleteStupid }) => {
   return <div className="stupid-list">{stupidList}</div>;
 };
 
-export default Shimul;
+export default Stupid;

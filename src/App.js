@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Shimul from "./Shimul";
+import Stupid from "./Stupid";
 import AddStupid from "./AddStupid";
 
 /*
@@ -12,7 +12,7 @@ class App extends Component {
     stupids: [
       { name: "Shimul", age: 26, belt: "black", id: 1 },
       { name: "Martuza", age: 76, belt: "leather", id: 2 },
-      { name: "Sumon", age: 17, belt: "maroon", id: 3 }
+      { name: "Sumon", age: 27, belt: "maroon", id: 3 }
     ]
   };
 
@@ -37,7 +37,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Hello React!</h1>
-        <Shimul deleteStupid={this.deleteStupid} stupids={this.state.stupids} />
+        <Stupid deleteStupid={this.deleteStupid} stupids={this.state.stupids} />
         <AddStupid addStupid={this.addStupid} />
       </div>
     );
