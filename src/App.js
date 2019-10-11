@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Shimul from "./Shimul";
+import AddStupid from './AddStupid';
 
 /*
 *This is a Container Component
@@ -19,6 +20,7 @@ class App extends Component {
       <div className="App">
         <h1>Hello React!</h1>
         <Shimul stupids={this.state.stupids} />
+        <AddStupid />
       </div>
     );
   }
