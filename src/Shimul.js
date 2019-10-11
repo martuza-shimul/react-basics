@@ -1,8 +1,8 @@
 import React from "react";
 
 /*
-*This is a UI Component
-?UI component is function based
+?This is a UI Component
+?UI component is a function based component & it doesn't contain any state
  */
 
 const Shimul = ({ stupids }) => {

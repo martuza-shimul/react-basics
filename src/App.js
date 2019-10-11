@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import Shimul from "./Shimul";
-import AddStupid from './AddStupid';
+import AddStupid from "./AddStupid";
 
 /*
-*This is a Container Component
-?Container component is class based
+?This is a Container Component
+?Container component is a class based Component & it's contain state
  */
 
 class App extends Component {
@@ -15,12 +15,20 @@ class App extends Component {
       { name: "Sumon", age: 17, belt: "maroon", id: 3 }
     ]
   };
+
+  addStupid = stupid => {
+    stupid.id = Math.random();
+    let stupids = [...this.state.stupids, stupid];
+    this.setState({
+      stupids: stupids
+    });
+  };
   render() {
     return (
       <div className="App">
         <h1>Hello React!</h1>
         <Shimul stupids={this.state.stupids} />
-        <AddStupid />
+        <AddStupid addStupid={this.addStupid} />
       </div>
     );
   }
